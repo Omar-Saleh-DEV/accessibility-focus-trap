@@ -1,0 +1,111 @@
+$modalTransformTransition:300ms;
+$modal-close-size:48px !default;
+$modal-min-width:600px !default;
+$modal-min-height:100px !default;
+
+.base-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $zindex-base-modal;
+  visibility: hidden;
+  display: none;
+  transition: visibility 0s ease 1s;
+
+  &--show {
+    display: block;
+    visibility: visible;
+    transition-delay: 0s;
+
+    .base-modal__body {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+    }
+  }
+}
+
+.base-modal__header {
+  position: relative;
+  height: $modal-close-size;
+}
+
+.base-modal__body {
+  width: auto;
+  min-width: $modal-min-width;
+  padding: 32px;
+  border: 1px solid $black-color;
+  background-color: $white-color;
+  transition: transform $modalTransformTransition ease 0.2s, opacity 0.3s;
+}
+
+.base-modal__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  border: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  .base-modal--show & {
+    opacity: 1;
+  }
+}
+
+.base-modal__close {
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+  z-index: 10;
+  display: block;
+  border: 0;
+  background: none;
+  width: $modal-close-size;
+  height: $modal-close-size;
+}
+
+.base-modal__close__icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 9px;
+  width: 20px;
+
+  &.chevron-right {
+    height: 14px;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: $gray-color-700;
+    transform: rotate(45deg);
+
+    &:nth-child(2) {
+      transform: rotate(-45deg);
+      top: 0px;
+    }
+  }
+
+
+  .base-modal__close--small & {
+    height: 9px;
+    width: 21px;
+
+    span {
+      height: 2px;
+    }
+  }
+}

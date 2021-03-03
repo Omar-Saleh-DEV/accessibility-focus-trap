@@ -1,0 +1,37 @@
+{% extends "../base.html.twig" %}
+{% block title %}Exercice piège au focus{% endblock %}
+{% block bodyClass %}exercice{% endblock %}
+
+{% block content %}
+<h1>Le piège au focus</h1>
+
+<!-- bouton - ouvrir address-modal -->
+<button class="modal-toggle" id="modal-button" aria-label="Ouvrir l'onglet mon adresse">Ouvrir</button>
+
+<!-- base-modal, ouverte par défaut -->
+<div class="base-modal base-modal--show" role="dialog" aria-modal="true" aria-labelledby="dialogTitle" id="address-modal">
+
+  <span class="base-modal__backdrop"></span>
+
+  <div class="base-modal__body">
+    <div class="base-modal__header">
+
+      <button id="closing-button" type="button" ref="firstFocusableEl" class="base-modal__close" aria-label="Fermer l'onglet mon adresse">
+        <span class="base-modal__close__icon">
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <h2 id="dialogTitle" class="base-modal__title">Mon adresse</h2>
+
+    </div>
+
+    <div class="base-modal__content">
+      {% include "../components/form.html.twig" %}
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

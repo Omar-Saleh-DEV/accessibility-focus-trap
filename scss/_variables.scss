@@ -1,0 +1,82 @@
+$assetsPath: '../../assets' !default;
+$fontPath: '../../assets/fonts' !default;
+
+@if ($env=='production') {
+  $assetsPath: '../assets';
+  $fontPath: '../assets/fonts';
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Colors
+///////////////////////////////////////////////////////////////////////////////
+$brand-color: #0049b8;
+//
+$white-color: #fff !default;
+$orange-color:#ffab4c !default; // Warning
+$red-color:#ef476f !default; // Danger
+$green-color: #06d6a0 !default; // Success
+$gray-color: #bababa !default;
+$black-color: #000 !default;
+$gray-color: #9b9b9b;
+$body-color:$white-color;
+$body-bg:none;
+$primary: $brand-color;
+$body-bg:none;
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Gradient Colors
+///////////////////////////////////////////////
+// Gray
+$gray-color-50: #f8f8f8;
+$gray-color-100: #f4f4f4;
+$gray-color-200: #dddddd;
+$gray-color-300: #c4c4c4;
+$gray-color-400: $gray-color;
+$gray-color-500: #888888;
+$gray-color-600: #757575;
+$gray-color-700: #111111;
+// Success
+$green-color-100: #f3fdfb;
+$green-color-200: #c1f5e8;
+$green-color-300: #83ebd0;
+$green-color-400: $green-color;
+$green-color-500: #05c190;
+$green-color-600: #04a178;
+$green-color-700: #036b50;
+// Warning
+$orange-color-100: #fffbf7;
+$orange-color-200: #ffead3;
+$orange-color-300: #ffd5a6;
+$orange-color-400: $orange-color;
+$orange-color-500: #e69a44;
+$orange-color-600: #c08039;
+$orange-color-700: #805526;
+// Danger
+$red-color-100: #fff6f8;
+$red-color-200: #fbd1db;
+$red-color-300: #f7a3b7;
+$red-color-400: $red-color;
+$red-color-500: #d74064;
+$red-color-600: #b33553;
+$red-color-700: #772337;
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Z_INDEX
+///////////////////////////////////////////////////////////////////////////////
+$zindex-dropdown:400;
+$zindex-base-modal:900;
+$zindex-search-modal:$zindex-dropdown - 1;
+$zindex-menu-mobile:$zindex-search-modal - 1;
+$zindex-header:$zindex-menu-mobile - 1;
+$zindex-top-banner:$zindex-header - 1;
+$zindex-share:$zindex-top-banner - 1;
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// a11y
+///////////////////////////////////////////////////////////////////////////////
+$focusables: "a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]";

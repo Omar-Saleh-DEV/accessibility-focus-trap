@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr" dir="{{direction}}">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>      
+      A11y -  {% block title %}{% endblock %}
+    </title>
+    <link href="./css/style.css" media="all"
+      rel="stylesheet" type="text/css" />   
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i|Open+Sans:400,400i,700,700i,800,800i"
+      rel="stylesheet">
+  </head>
+
+  <body class="{% block bodyClass %}{% endblock %}">
+    <main class="main {% block mainClass %}{% endblock %}" id="main"> 
+      <a id="mainContent"></a>
+      <div class="container">
+        <div class="row">
+          <div class="col main-col">          
+          {% block content %}{% endblock %}               
+          </div>
+        </div>
+      </div>   
+    </main>
+
+    {% block scriptBody %}
+      {% for file in jsfiles["index"].js %}
+      <script src="{{file}}"></script>
+      {% endfor %}
+    {% endblock %}
+  </body>
+</html>

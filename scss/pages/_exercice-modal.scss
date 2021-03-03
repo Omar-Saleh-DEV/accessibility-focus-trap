@@ -1,0 +1,44 @@
+.exercice {
+  h1 {
+    margin-bottom: 32px;
+  }
+
+  .modal {
+    margin-top: 32px;
+  }
+
+  input[type="submit"] {
+    margin-top: 32px
+  }
+
+  .base-modal__header {
+    padding: 32px;
+  }
+
+  .base-modal__content {
+    padding: 32px;
+
+    .modal__form-group {
+      margin-bottom: 12px;
+
+      label {
+        display: block;
+      }
+    }
+  }  
+}
+
+.form {
+
+  input[type="submit"] {
+    margin-top: 32px
+  }
+
+  .form-group {
+    margin-bottom: 12px;
+
+    label {
+      display: block;
+    }
+  }
+}

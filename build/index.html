@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>      
+      A11y -  Exercice piège au focus    </title>
+    <link href="./css/style.css" media="all"
+      rel="stylesheet" type="text/css" />   
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i|Open+Sans:400,400i,700,700i,800,800i"
+      rel="stylesheet">
+  </head>
+
+  <body class="exercice">
+    <main class="main " id="main"> 
+      <a id="mainContent"></a>
+      <div class="container">
+        <div class="row">
+          <div class="col main-col">          
+          
+<h1>Le piège au focus</h1>
+
+<!-- bouton - ouvrir address-modal -->
+<button class="modal-toggle" id="modal-button" aria-label="Ouvrir l'onglet mon adresse">Ouvrir</button>
+
+<!-- base-modal, ouverte par défaut -->
+<div class="base-modal base-modal--show" role="dialog" aria-modal="true" aria-labelledby="dialogTitle" id="address-modal">
+
+  <span class="base-modal__backdrop"></span>
+
+  <div class="base-modal__body">
+    <div class="base-modal__header">
+
+      <button id="closing-button" type="button" ref="firstFocusableEl" class="base-modal__close" aria-label="Fermer l'onglet mon adresse">
+        <span class="base-modal__close__icon">
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <h2 id="dialogTitle" class="base-modal__title">Mon adresse</h2>
+
+    </div>
+
+    <div class="base-modal__content">
+      <form action="sendAddress" class="form">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="fieldset">
+          <legend class="fieldset-legend">Votre identité</legend>
+        <div class="form-group">
+          <p>Prénom</p>
+          <input id="firstinput" type="text" aria-label="Prénom">
+          </p>
+        </div>
+        <div class="form-group">
+          <p>Nom</p>
+          <input type="text" aria-label="Nom">
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="fieldset">
+        <legend class="fieldset-legend">Vos coordonnées</legend>
+        <div class="form-group">
+          <p>Rue</p>
+          <input type="text" aria-label="rue">
+        </div>
+        <div class="form-group">
+          <p>Code postal</p>
+          <input type="text" aria-label="code postal">
+        </div>
+        <div class="form-group">
+          <p>Ville</p>
+          <input type="text" aria-label="ville">
+        </div>
+        <div class="form-group">
+          <p>Pays</p>
+          <input type="text" aria-label="Pays">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <input id="lastinput" ref="lastFocusableEl" type="submit" value="Entrer" role="button" aria-label="Envoyer le formulaire de ouf">
+</form>
+    </div>
+
+  </div>
+</div>
+
+               
+          </div>
+        </div>
+      </div>   
+    </main>
+
+                <script src="./scripts/runtime.js"></script>
+            <script src="./scripts/vendors~index.js"></script>
+            <script src="./scripts/index.js"></script>
+            </body>
+</html>
